@@ -1,0 +1,9 @@
+## Download, load and filter data
+
+url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+download.file(url, destfile = "project.zip")
+unzip("project.zip")
+dataoriginal <- read.table("household_power_consumption.txt", header = TRUE, sep = ";", na.strings = "?", colClasses = c('character', 'character','numeric','numeric','numeric','numeric','numeric','numeric','numeric'))
+dataoriginal <- subset(dataoriginal, Date == c("1/2/2007") | Date == c("2/2/2007"))
+DateTime <- dmy_hms(paste(dataoriginal$Date, dataoriginal$Time))
+dataoriginal<- cbind(DateTime, dataoriginal)
