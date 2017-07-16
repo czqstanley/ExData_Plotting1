@@ -11,3 +11,4 @@ legend("topright", col=c("black", "red", "blue"), lwd=c(1,1,1),
 
 dev.copy(png,"plot3.png", width = 480, height = 480)
 dev.off()
+## My system setting is Chinese, so the weekdays on x-axis is Chinese. They are "Thu - Fri - Sat".
